@@ -1,0 +1,149 @@
+:root{
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #916BEA;
+    --color-primary: #8257E5;
+    --color-primary-dark: #774DD6;
+    --color-primary-darker: #6842c2;
+    --color-secondary: #04D361;
+    --color-secondary-dark: #04BF58;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #32264D;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #6A6180;
+    --color-line-in-white: #E6E6F0;
+    --color-input-background: #F8F8FC;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #C1BCCC;
+    /*
+        Tamanho da fonte padrão: 16px - 100% - 1rem
+        X% e Xrem são unidades de medidas relativas, sendo flexíveis para aplicar o conceito Mobile First
+    */
+    font-size: 60%; 
+    /*
+        Nesse caso vamos utilizar rem ou % pois será aplicado o conceito de responsividade Mobile First. Ao desenvolver a página, podemos desenvolver de forma 
+        funcional acessada por um desktop, ou podemos desenvolvê-la numa maneira Mobile First onde veremos a sua funcionalidade primeiro em dispositivos.
+    */
+}
+
+/*
+    Forma de zerar o padding e margin, e colocar o box-sizing relacionado com a border-box
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100vh; 
+    /*
+        height = altura
+        vh = viwer height = com base no que vemos
+        É uma boa prática sempre colocá-lo junto com html pra ocupar toda a visão do documento
+    */
+}
+
+body{
+    background: var(--color-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body, input, button, textarea{
+    /*
+        font: 500 1.6rem Poppins; Tem dois modos de escrita, um simplificado e o outro detalhado
+    */
+    font-weight: 500;
+    font-family: Poppins;
+    font-size: 1.6rem;
+    color: var(--color-text-base);
+}
+
+#container{
+    width: 90vw;
+    max-width: 700px;
+    /*
+        width = largura
+        Nesse caso tem um total de 100 pedaços porém será ocupado apenas 90 deles
+        max-width = largura máxima de acordo com o tamanho da tela do usuário
+    */
+}
+
+/*
+    Cria uma condinção, se o usuário acessar a página em um dispositivo que a tela maior que 700px, a fonte vai aumentar 62,5%
+*/
+@media(min-width: 700px){
+    :root{
+        font-size: 62.5%;
+    }
+}
+
+/*
+    Mesma coisa que juntar os três elementos e aplicar uma condição para todos
+    h1, span, a{
+        width: 20px;
+    }
+*/
+
+/*
+    display: flex; =  consegue mudar o fluxo padrão do html
+        display: block = preenche uma linha inteira, forçando outro elemento começar numa linha abaixo
+            elements: div/h1/p
+        display: inline = permite que outros elementos inline compartilhem da mesma linha
+            elements: a/span/strong
+
+    align-items e justify-content só conseguem ser utilizados se o display estiver flex
+*/
+
+/*
+    #container{
+        Linha de 1px de grossura, solida da cor vermelha
+        border: 1px solid red;
+        
+        Maneira simplificada
+        padding: 10px 40px 60px 2px; 
+
+        Maneira separada
+        padding-top: 10px;
+        padding-right: 40px;
+        padding-left: 40px;
+        padding-bottom: 100px;
+        
+        padding: 40px;
+        margin: 60px;
+        width: 300px; Largura da caixa
+        height: 300px; Altura da caixa
+    }
+*/
+
+/*
+    Box Model
+    Todo e qualquer elemento html quando trabalhado com CSS ele está sendo uma caixa
+    Propriedades de caixas:
+        -Tamanho do conteúdo = Conteúdo dentro da caixa
+        -Preenchimentos = Padding
+        -Bordas = Border
+        -Espaçamentos = Margin
+        -Displays
+*/
+
+/*
+    body{
+        background-color: var(--color-primary-dark);
+        font-size: 20px;
+    }
+
+    O background-color se refere a cor de fundo onde estamos pegamos uma variável "--color-primary-dark" que tem um valor hexadecimal que corresponde a uma cor
+    o font-size é referente ao tamanho das letras
+*/
+
+/*
+    :root = elemento raíz do html inteiro
+    Os dois traços -- definem variáveis no html
+    Nesse caso as variáveis possuem valor hexadecimal, nome das cores
+*/

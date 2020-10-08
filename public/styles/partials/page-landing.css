@@ -1,0 +1,256 @@
+/*
+    Página inicial = Landing Page
+*/
+
+/*
+    Define a cor do fundo do <body id="page-landing">
+*/
+#page-landing{
+    background: var(--color-primary);
+}
+
+/*
+    Define a cor do texto do conteúdo dentro do <div id="container">
+*/
+#page-landing #container{ 
+    color: var(--color-text-in-primary)
+}
+
+/*
+    Acessa a classe .logo-container 
+    Seleciona especificamente a imagem
+    Define a altura
+*/
+.logo-container img{
+    height: 10rem;
+}
+
+/*
+    Acessa a classe .logo-container
+    Alinha o texto e a imagem que está dentro da classe
+    Define um espaço na parte de baixo do texto, colocando uma distância entre o texto e a imagem
+*/
+.logo-container{
+    text-align: center;
+    margin-bottom: 3.2rem;
+}
+
+/*
+    Acessa a classe .logo-container
+    Seleciona especificamente a tag h2
+    Define o peso da fonte
+    Define o tamanho da fonte
+    Define a altura da linha do texto
+    Define um espaçamento na parte de cima do texto
+*/
+.logo-container h2{
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 4.6rem;
+    margin-top: 0.8rem;
+}
+
+/*
+    Acessa a classe .hero-imagem
+    Define a largura 100% de 90vw
+    Como o #container na main.css tem width: 90vw, ele também vai ter 90vw pois estão ligados diretamente
+*/
+.hero-image{
+    width: 100%;
+}
+
+/*
+    Acessa a classe .buttons-container
+    Define display: flex
+    Com isso, centraliza os botões
+    Define um espaçamento entre eles
+*/
+.buttons-container{
+    display: flex;
+    justify-content: center;
+    margin: 3.2rem 0;
+}
+
+/*
+    Acessa a classe .buttons-container
+    Especificamente a tag a (que são os dois botões)
+    Define a largura
+    Define a altura
+    Define o arredondamento das bordas do botão
+    Define um tamanho de separação entre eles
+    Define o peso da fonte, o tamanho e a família
+    Define display: flex, visando organizar os elementos (imagem e escrita)
+    Alinhou os itens (imagem e escrita) de forma que ficaram centralizados
+    Retira a linha de baixo da escrita
+    Define o tempo de transição da cor do background do botão quando estiver em hover
+    Define a cor da escrita
+*/
+.buttons-container a{
+    width: 30rem;
+    height: 10.4rem;
+
+    border-radius: 0.8rem;
+    margin-right: 1.6rem;
+
+    font: 700 2.4rem Archivo;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    transition: background 0.2s;
+
+    color: var(--color-button-text);
+}
+
+/*
+    Acessa a classe .buttons-container
+    Seleciona especificamente a tag a
+    Seleciona as imagens
+    Define a largura
+    Define o distânciamento dos botões, nesse caso à direita 
+*/
+.buttons-container a img{
+    width: 4rem;
+    margin-right: 2.4rem;
+}
+
+/*
+    Acessa a classe .buttons-container
+    Seleciona especificamente a tag a
+    Seleciona a classe .study
+    Define a cor do botão
+*/
+.buttons-container a.study{
+    background: var(--color-primary-lighter);
+}
+
+/*
+    Acessa a classe .buttons-container
+    Seleciona especificamente a tag a
+    Seleciona a classe .study
+    Define o estado em hover, ou seja, só vai executar o que vai ser escrito quando o ponteiro do mouse estiver em cima do botão
+    Obs: nesse caso é uma mudança de cor leve
+*/
+.buttons-container a.study:hover{
+    background: var(--color-primary-light);
+}
+
+/*
+    Acessa a classe .buttons-container
+    Seleciona especificamente a tag a
+    Seleciona a classe .give-classes
+    Define a cor do botão
+    Define a margem da direita para 0, visando fazer uma correção
+*/
+.buttons-container a.give-classes{
+    background: var(--color-secondary);
+    margin-right: 0rem;
+}
+
+/*
+    Acessa a classe .buttons-container
+    Seleciona especificamente a tag a
+    Seleciona a classe .give-classes
+    Define o estado em hover, ou seja, só vai executar o que vai ser escrito quando o ponteiro do mouse estiver em cima do botão
+    Obs: nesse caso é uma mudança de cor leve
+*/
+.buttons-container a.give-classes:hover{
+    background: var(--color-secondary-dark);
+}
+
+.total-connections{
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-connections img{
+    margin-left: 0.8rem;
+}
+
+/*
+    Cria uma condição onde será exibido com 40% do tamanho da fonte total quando a tela do usuário for menor que 700px
+*/
+@media(max-width: 699px){
+    :root{
+        font-size: 40%;
+    }
+}
+
+/*
+    Programar as telas desktop
+    Só vai ser exibido o que está escrito dentro do @media quando a largura mínima da tela for igual ou maior a 1100px
+    Vai alterar o conteúdo dentro do <div id="container">
+    Define uma expansão máxima de largura de 90px para 1100px
+    Define display: grid, para conseguir enquadrar todos os elementos
+    Define o tamanho por fração do grid-template-columns
+    Define o tamanho por px e o restante por fração do grid-template-rows
+    Define a ordem dos elementos através do grid-template-areas
+    Acessa cada classe e passa sua posição através do grid-area
+    Define o gap que coloca um espaçamento entre cada elemento grid
+*/
+@media(min-width: 1100px){
+    #page-landing #container{
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: 40% 20% 30%;
+        grid-template-rows: 350px 104px;
+        grid-template-areas: 
+        "proffy image image"
+        "button button texting";
+        column-gap: 87px;
+        row-gap: 86px;
+    }
+
+    /*
+        Faz uma ligação do grid-template-areas com proffy, associando a classe .logo-container através do grid-area
+        Alinha o texto ao início do grid
+        Centraliza o texto ao grid, assim não deixa o conteúdo, no caso o texto escapar do grid
+    */
+    .logo-container{
+        grid-area: proffy;
+        text-align: initial;
+        align-self: center;
+        margin: 0;
+    }
+    
+    /*
+        Define a altura da imagem da classe .logo-container
+    */
+    .logo-container img{
+        height: 127px;
+        margin: 0;
+    }
+
+    .hero-image{
+        grid-area: image;
+        height: 350px;
+    }
+
+    /*
+        Faz uma ligação do grid-template-areas com button, associando a classe .buttons-container através do grid-area
+        Sobreescreve o justify-content que foi escrito primeiramente no Mobile Mode para ser center, agora definindo ele como flex-start
+        Remove a margem dos botões para melhor alinhamento com o texto inserido na classe .total-connections
+    */
+    .buttons-container{
+        grid-area: button;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    /*
+        Faz uma ligação do grid-template-areas com texting, associando a classe .total-connections através do grid-area
+        Reposiciona o texto com base no tamanho de seu grid, colocando ele encostado no final do grid
+        Define o tamanho do texto
+    */
+    .total-connections{
+        grid-area: texting;
+        justify-self: end;
+        font-size: 1.2rem;
+    }
+    
+}

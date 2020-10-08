@@ -1,0 +1,87 @@
+.page-header{
+    background-color: var(--color-primary);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header .top-bar-container{
+    width: 90%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.6rem 0;
+}
+
+.page-header .top-bar-container a{
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+.page-header .top-bar-container a:hover{
+    opacity: 0.6;
+}
+
+.page-header .top-bar-container > img{
+    height: 1.6rem;
+}
+
+.page-header .header-content{
+    width: 90%;
+    margin: 3.2rem auto;
+
+    position: relative; 
+    /*
+        Para conseguir usar position: absolute que se encontra no #search-teachers dentro da condição @media(min-width: 700px)
+
+        #search-teachers{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); Igual a 1fr 1fr 1fr 1fr
+            gap: 16px; Espaço de 16px entre colunas
+            position: absolute;
+        }
+    */
+}
+
+.page-header .header-content strong{
+    font: 700 3.6rem Archivo;
+    line-height: 4.2rem;
+    color: var(--color-title-in-primary);
+}
+
+.page-header .header-content p{
+    max-width: 30rem;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--color-text-in-primary);
+    margin-top: 2.4rem;
+}
+
+@media(min-width: 700px){
+
+    .page-header{
+        height: 340px;
+    }
+
+    .page-header .top-bar-container{
+        max-width: 1100px;
+    }
+
+    .page-header .header-content{
+        max-width: 740px;
+        margin: 0 auto; /*Tirou a margem e deixou as laterais de forma automática*/
+        flex: 1 1; /*Esticar o conteúdo na caixa*/
+        padding-bottom: 48px; /*Espaçamento da parte de baixo da caixa e os elementos dentro da caixa*/
+        display: flex; /*Deixando elementos flexíveis para alteração*/
+        flex-direction: column; /*Garante que um elemento um fique abaixo do outro*/
+        justify-content: center;
+    }
+
+    .page-header .header-content strong{
+        max-width: 350px;
+    }
+
+}

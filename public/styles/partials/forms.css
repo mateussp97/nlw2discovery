@@ -1,0 +1,76 @@
+/*
+    Formatação do tamanho das letras e cor das caixas de opção
+*/
+.select-block label, 
+.input-block label, 
+.textarea-block label{
+    font-size: 1.4rem;
+    color: var(--color-text-complement);
+}
+
+/*
+    Formatação das caixas de seleção e seu conteúdo dentro, alterando a:
+        -Largura    
+        -Altura
+        -Margem de cima
+        -Borda do botão arredondada
+        -Cor de fundo
+        -Definindo linha das bordas
+        -Removeu o outline, ou seja, se o outline estivesse ativo e o usuário selecionasse uma opção, iria aparecer uma linha forte em volta da caixa de seleção
+        -Coloca uma distância entre o conteúdo dentro da caixa e a parede da caixa
+        -Define a fonte do texto
+*/
+.input-block input, 
+.select-block select, 
+.textarea-block textarea{
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+
+/*
+    Alguns ajustes da caixa de texto "Biografia", resize é referente a um marcador que o usuário pode controlar
+*/
+.textarea-block textarea{
+    padding: 1.2rem 1.6rem;
+    height: 16rem;
+    resize: none;
+}
+
+/*
+    Criado para auxiliar a .input-block:focus-within::after
+*/
+.input-block, 
+.select-block, 
+.textarea-block{
+    position: relative;
+}
+
+/*
+    Seleciona a classe .input-block coloca uma condição focus-within e um pseudo-elemento ::after. 
+    O pseudo-elemento irá criar um elemento html quando o campo .input-block estiver em foco, ous seja, quando o usuário estiver interagindo com o campo 
+*/
+.input-block:focus-within::after, 
+.select-block:focus-within::after, 
+.textarea-block:focus-within::after{
+    content:"";
+    width: calc(100% - 3.2rem); /*Faz um cálculo para definir a largura da barra*/
+    height: 2px; /*Define a altura*/
+    background: var(--color-primary-light); /*Define a cor de fundo*/
+    position: absolute; /*Se o .input-block não tivesse na posição relativa na função da linha 118, o after seria gerado no study.html fora do <div class="input-block">*/
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 0;
+}
+
+label small{
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+    color: var(--color-small-info);
+}
