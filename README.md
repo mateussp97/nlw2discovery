@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="" title="Proffy" src="./public/images/logoGitHub.svg"/>
+    <img alt="" title="Proffy" src="./public/images/logoGitHub.svg" width="300px"/>
 </h1>
 
 # NLW 2 Discovery
