@@ -11,7 +11,7 @@ NLW is a practical week with a lot of code, challenges, networking and a single 
 Proffy aims to connect education professionals to potential new students. On the platform you can register as a teacher or simply list all available professionals based on a system of filters (day of the week, time and subject taught).
 
 ## Web Preview
-![](./public/images/icons/Proffy.gif)
+![](./public/images/icons/nlw2discovery.gif)
 
 ## Technology
 This is just the responsive web page, where you can register as a teacher or list teachers through filters.
